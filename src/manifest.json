@@ -1,17 +1,21 @@
 {
-    "name": "Screenzie",
-    "version": "1.0",
+    "name": "Screensharing Extension",
+    "description": "Screensharing Extension for my app",
+    "version": "1.0.0",
     "manifest_version": 2,
-    "content_scripts":[{
-        "matches":["<all_urls>"],
-        "js":["content.js"]
-    }],
-    "browser_action":{
-        "default_popup":"popup.html"
-    }, 
-      "permissions": [
-        "activeTab",
-        "http://*/",
-        "storage"
-      ]
-}
+    "background": {
+      "scripts": ["background.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "permissions": [
+      "desktopCapture",
+      "file://*/*",
+      "tabs"
+    ]
+  }
+  
